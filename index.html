@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closet Creations | Custom Laser Engraving</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <header>
+        <h1>Closet Creations</h1>
+        <p>Custom Laser Engraving & Personalized Gifts</p>
+    </header>
+
+    <section class="gallery">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300" alt="Hockey Stick Wax">
+            <h3>Hockey Stick Wax</h3>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300" alt="Engraved Mugs">
+            <h3>Custom Mugs</h3>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300" alt="Serving Trays">
+            <h3>Serving Trays</h3>
+        </div>
+    </section>
+
+    <section class="quote-form">
+        <h2>Request a Custom Quote</h2>
+        <form action="https://formspree.io/f/xbdaebqy" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            
+            <label for="product">What are you looking for?</label>
+            <select name="product" id="product">
+                <option value="hockey-wax">Hockey Stick Wax</option>
+                <option value="mugs">Engraved Mugs</option>
+                <option value="trays">Serving Trays</option>
+                <option value="keychains">Keychains</option>
+                <option value="other">Other Custom Project</option>
+            </select>
+
+            <input type="number" name="quantity" placeholder="Quantity" min="1">
+            <textarea name="message" placeholder="Describe your engraving (text, logo ideas, etc.)" required></textarea>
+            
+            <button type="submit">Send Quote Request</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Closet Creations | Based in Canada</p>
+    </footer>
+
+</body>
+</html>
