@@ -4,74 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Closet Creations | Custom Laser Engraving</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.0">
 </head>
 <body>
 
     <header>
-        <h1>Closet Creations</h1>
-        <p>Custom Laser Engraving & Personalized Gifts</p>
+        <div class="container">
+            <h1>Closet Creations</h1>
+            <p>Handcrafted & Custom Laser Engraved Gifts</p>
+        </div>
     </header>
 
-<section class="product-grid">
-    <div class="card">
-        <div class="card-image">
-            <img src="https://picsum.photos/400/300" alt="Product Preview">
-        </div>
-        <div class="card-content">
-            <h3>Hockey Stick Wax</h3>
-            <p>Hand-poured and custom engraved for teams and players.</p>
-            <a href="#quote" class="btn-secondary">Request Quote</a>
-        </div>
-    </div>
+    <main class="container">
+        <section class="product-grid">
+            <div class="product-card">
+                <img src="https://picsum.photos/id/1060/500/400" alt="Hockey Wax">
+                <div class="card-info">
+                    <h3>Hockey Stick Wax</h3>
+                    <p>Custom team logos and personalized scents.</p>
+                    <a href="#quote" class="btn">Request Quote</a>
+                </div>
+            </div>
 
-    <div class="card">
-        <div class="card-image">
-            <img src="https://picsum.photos/400/300" alt="Product Preview">
-        </div>
-        <div class="card-content">
-            <h3>Custom Drinkware</h3>
-            <p>High-durability engraving on tumblers and ceramic mugs.</p>
-            <a href="#quote" class="btn-secondary">Request Quote</a>
-        </div>
-    </div>
+            <div class="product-card">
+                <img src="https://picsum.photos/id/429/500/400" alt="Mugs">
+                <div class="card-info">
+                    <h3>Custom Mugs</h3>
+                    <p>High-quality engraving for any occasion.</p>
+                    <a href="#quote" class="btn">Request Quote</a>
+                </div>
+            </div>
 
-    <div class="card">
-        <div class="card-image">
-            <img src="https://picsum.photos/400/300" alt="Product Preview">
-        </div>
-        <div class="card-content">
-            <h3>Serving Trays</h3>
-            <p>Elegant wood-engraved boards for hosting and gifts.</p>
-            <a href="#quote" class="btn-secondary">Request Quote</a>
-        </div>
-    </div>
-</section>
+            <div class="product-card">
+                <img src="https://picsum.photos/id/435/500/400" alt="Trays">
+                <div class="card-info">
+                    <h3>Serving Trays</h3>
+                    <p>Beautifully engraved wood for your home.</p>
+                    <a href="#quote" class="btn">Request Quote</a>
+                </div>
+            </div>
+        </section>
 
-    <section class="quote-form">
-        <h2>Request a Custom Quote</h2>
-        <form action="https://formspree.io/f/xbdaebqy" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            
-            <label for="product">What are you looking for?</label>
-            <select name="product" id="product">
-                <option value="hockey-wax">Hockey Stick Wax</option>
-                <option value="mugs">Engraved Mugs</option>
-                <option value="trays">Serving Trays</option>
-                <option value="keychains">Keychains</option>
-                <option value="other">Other Custom Project</option>
-            </select>
-
-            <input type="number" name="quantity" placeholder="Quantity" min="1">
-            <textarea name="message" placeholder="Describe your engraving (text, logo ideas, etc.)" required></textarea>
-            
-            <button type="submit">Send Quote Request</button>
-        </form>
-    </section>
+        <section id="quote" class="form-section">
+            <h2>Get a Custom Quote</h2>
+            <form action="https://formspree.io/f/xbdaebqy" method="POST">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <select name="product">
+                    <option value="hockey-wax">Hockey Stick Wax</option>
+                    <option value="mugs">Engraved Mugs</option>
+                    <option value="trays">Serving Trays</option>
+                </select>
+                <textarea name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Closet Creations | Based in Canada</p>
+        <p>&copy; 2026 Closet Creations | Proudly Canadian</p>
     </footer>
 
 </body>
