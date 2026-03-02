@@ -4,92 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Closet Creations | Custom Laser Engraving</title>
-    <link rel="stylesheet" href="style.css?v=1.0">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <a href="index.html">
-            <img src="logo.png" alt="Closet Creations Logo" class="main-logo">
-        </a>
-        <p>Handcrafted & Custom Laser Engraved Gifts</p>
-    </div>
-</header>
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="Closet Creations Logo" class="logo">
+            <h1>Handcrafted Custom Creations</h1>
+            <p>High-quality laser engraving & woodworking from the heart of Canada.</p>
+        </div>
+    </header>
 
     <main class="container">
-        <section class="product-grid">
-            <div class="product-card">
-                <img src="https://picsum.photos/id/1060/500/400" alt="Hockey Wax">
-                <div class="card-info">
-                    <h3>Hockey Stick Wax</h3>
-                    <p>Custom team logos and personalized scents.</p>
-                    <a href="#quote" class="btn">Request Quote</a>
-                </div>
+        <section class="grid">
+            <div class="card">
+                <img src="hockey-wax.jpg" alt="Custom Hockey Wax">
+                <h3>Personalized Hockey Wax</h3>
+                <p>The perfect gift for the player who has everything.</p>
             </div>
-
-            <div class="product-card">
-                <img src="https://picsum.photos/id/429/500/400" alt="Mugs">
-                <div class="card-info">
-                    <h3>Custom Mugs</h3>
-                    <p>High-quality engraving for any occasion.</p>
-                    <a href="#quote" class="btn">Request Quote</a>
-                </div>
+            <div class="card">
+                <img src="mugs.jpg" alt="Custom Mugs">
+                <h3>Laser Engraved Mugs</h3>
+                <p>Stainless steel or ceramic, personalized for any occasion.</p>
             </div>
-
-            <div class="product-card">
-                <img src="https://picsum.photos/id/435/500/400" alt="Trays">
-                <div class="card-info">
-                    <h3>Serving Trays</h3>
-                    <p>Beautifully engraved wood for your home.</p>
-                    <a href="#quote" class="btn">Request Quote</a>
-                </div>
+            <div class="card">
+                <img src="trays.jpg" alt="Serving Trays">
+                <h3>Custom Serving Trays</h3>
+                <p>Beautifully engraved wood for hosting or home decor.</p>
             </div>
         </section>
 
-        <section id="quote" class="form-section">
-            <h2>Get a Custom Quote</h2>
-            <form action="https://formspree.io/f/xbdaebqy" method="POST">
-                <form id="quote-form" action="https://formspree.io/f/xbdaebqy" method="POST">
-                
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <select name="product">
-                    <option value="hockey-wax">Hockey Stick Wax</option>
-                    <option value="mugs">Engraved Mugs</option>
-                    <option value="trays">Serving Trays</option>
+        <section id="contact" class="form-section">
+            <h2>Request a Custom Quote</h2>
+            <p>Tell us what you're looking for, and we'll get back to you within 24 hours.</p>
+            
+            <form id="quote-form" action="https://formspree.io/f/xbdaebqy" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <select name="product" required>
+                    <option value="" disabled selected>Select a Product</option>
+                    <option value="Hockey Wax">Hockey Wax</option>
+                    <option value="Mugs">Custom Mugs</option>
+                    <option value="Trays">Serving Trays</option>
+                    <option value="Other">Other / Custom Request</option>
                 </select>
-                <textarea name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
-                <button type="submit">Send Message</button>
-                <form action="https://formspree.io/f/xbdaebqy" method="POST">
-        
-    </form>
+                <textarea name="message" placeholder="Describe your custom design..." required></textarea>
+                
+                <button type="submit" id="submit-btn">Send Request</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Closet Creations | Proudly Canadian</p>
+        <p>&copy; 2026 Closet Creations | Follow us on Instagram</p>
     </footer>
 
     <script>
-  const form = document.getElementById("quote-form");
-  form.addEventListener("submit", async function(e) {
-    e.preventDefault(); // Stop the page from leaving
-    const data = new FormData(form);
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    });
-    if (response.ok) {
-      window.location.href = "thanks.html"; // Manual redirect!
-    } else {
-      alert("Oops! There was a problem submitting your form.");
-    }
-  });
-</script>
-    
+        const form = document.getElementById("quote-form");
+        const btn = document.getElementById("submit-btn");
+
+        form.addEventListener("submit", async function(e) {
+            e.preventDefault(); // Stop the page from leaving
+            btn.innerText = "Sending...";
+            btn.disabled = true;
+
+            const data = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    // This bypasses the Formspree paywall!
+                    window.location.href = "thanks.html"; 
+                } else {
+                    alert("Oops! There was a problem. Please try again or email us directly.");
+                    btn.innerText = "Send Request";
+                    btn.disabled = false;
+                }
+            } catch (error) {
+                alert("Network error. Please check your connection.");
+                btn.innerText = "Send Request";
+                btn.disabled = false;
+            }
+        });
+    </script>
+
 </body>
 </html>
