@@ -1,64 +1,89 @@
+/* General Reset */
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
+    background-color: #fcfcfc;
     color: #333;
-    background: #fdfdfd;
 }
 
 header {
     text-align: center;
-    padding: 3rem 1rem;
-    background: #fff;
+    padding: 60px 20px;
+    background: white;
     border-bottom: 1px solid #eee;
 }
 
-h1 { margin: 0; letter-spacing: 2px; text-transform: uppercase; }
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 2rem;
+/* The Grid Container */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px 10%;
 }
 
-.product-card {
-    background: #fff;
-    border: 1px solid #eee;
-    padding: 10px;
-    text-align: center;
-    width: 300px;
-}
-
-.product-card img { max-width: 100%; height: auto; }
-
-.quote-form {
-    max-width: 600px;
-    margin: 3rem auto;
-    padding: 2rem;
-    background: #f9f9f9;
-    border-radius: 8px;
-}
-
-form input, form select, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+/* The Individual Card */
+.card {
+    background: white;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box; /* Important for layout */
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Stacks image, then title, then text */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-button {
-    background: #333;
-    color: white;
-    padding: 12px 20px;
-    border: none;
+.card-image img {
     width: 100%;
-    cursor: pointer;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Card Content Area */
+.card-content {
+    padding: 25px;
+    text-align: center;
+}
+
+.card-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    color: #111;
+}
+
+.card-content p {
+    margin: 0 0 20px 0;
     font-size: 1rem;
+    color: #555; /* Makes description text visible */
+    line-height: 1.4;
+}
+
+/* Button Styling */
+.btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #333;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
     transition: 0.3s;
 }
 
-button:hover { background: #555; }
+.btn-secondary:hover {
+    background: #333;
+    color: white;
+}
+
+/* Form Styling */
+.quote-form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background: #f4f4f4;
+    border-radius: 8px;
+}
+
+.quote-form input, .quote-form select, .
